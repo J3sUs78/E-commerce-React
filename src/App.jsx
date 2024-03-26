@@ -1,18 +1,11 @@
-import './App.css'
-import Card from './components/Card'
+import Sidebar from './components/shared/Sidebar'
 
 
 function App() { //componente react
 
   return (
-    <div className='App'>
-      <h1> Hola React</h1>
-      <div className='container'>
-        <Card title="titulo" description="hola"/>
-        <Card title="titulo" description='hola'/>
-        <Card title="titulo" description='hola'/>
-        <Card />
-      </div>
+    <div className='bg-[#262837] w-full min-h-screen'>
+      <Sidebar />
       
     </div>
   )
