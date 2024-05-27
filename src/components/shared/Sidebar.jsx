@@ -1,7 +1,8 @@
 import React from 'react'
 import { RiHomeSmileFill, RiAccountPinCircleFill,RiLogoutCircleRFill  } from "react-icons/ri";
 import { GiShop } from "react-icons/gi";
-import { MdOutlineShoppingCartCheckout, MdOutgoingMail } from "react-icons/md";
+import { MdOutgoingMail } from "react-icons/md";
+import { TbTruckDelivery } from "react-icons/tb";
 
 
 // Componente Sidebar
@@ -50,7 +51,7 @@ const Sidebar = (props) => {
                             href="#"
                             className="group-hover:bg-[#ec7c6a] p-4 flex justify-center rounded-xl text-[#ec7c6a] group-hover:text-white transition-colors"
                         >
-                            <MdOutlineShoppingCartCheckout className="text-2xl" /> {/* Icono de carrito de compras */}
+                            <TbTruckDelivery className="text-2xl" /> {/* Icono de carrito de compras */}
                         </a>
                     </li>
 
