@@ -207,11 +207,11 @@ const Card = (props) => {
                 <div className='bg-[#262837] absolute w-full bottom-0 left-0 p-4'>
                     <div className='flex items-center justify-between mb-4'>
                         <span className='text-gray-400'> Descuento</span>
-                        <span> $ 0</span>
+                        <span> $ 10.000</span>
                     </div>
                     <div className='flex items-center justify-between mb-6'>
                         <span className='text-gray-400'> Subtotal</span>
-                        <span> $ 66.000</span>
+                        <span> $ 254.000</span>
                     </div>
                     <div>
                         <button className='bg-[#ec7c6a] w-full py-2 px-4 rounded-lg '>

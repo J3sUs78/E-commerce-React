@@ -25,13 +25,13 @@ const Sidebar = (props) => {
                         </h1>
                     </li>
 
-                    {/* Primera opción (Home) */}
+                    {/* Primera opción (shop) */}
                     <li className="bg-[#262837] p-4 rounded-tl-xl rounded-bl-xl">
                         <a // Enlace
                             href="#"
                             className="bg-[#ec7c6a] p-4 flex justify-center rounded-xl text-white"
                         >
-                            <RiHomeSmileFill className="text-2xl" /> {/* Icono de casa sonriente */}
+                            <GiShop className="text-2xl" /> {/* Icono de casa tienda */}
                         </a>
                     </li>
 
@@ -41,7 +41,7 @@ const Sidebar = (props) => {
                             href="#"
                             className="group-hover:bg-[#ec7c6a] p-4 flex justify-center rounded-xl text-[#ec7c6a] group-hover:text-white transition-colors"
                         >
-                            <GiShop className="text-2xl" /> {/* Icono de tienda */}
+                            <RiHomeSmileFill className="text-2xl" /> {/* Icono de  */}
                         </a>
                     </li>
 
@@ -74,11 +74,8 @@ const Sidebar = (props) => {
                             <MdOutgoingMail className="text-2xl" /> {/* Icono de carrito de compras */}
                         </a>
                     </li>
-
-
                 </ul>
             </div>
-
             <div>  {/* Logout */}
                 <ul>
                     
