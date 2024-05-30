@@ -1,8 +1,9 @@
 
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 //Import pages
-import { Home, Profile, Register } from './pages';
+import { Home, Login, Profile, Register } from './pages';
 
 
 function App() { //componente react
@@ -18,10 +19,7 @@ function App() { //componente react
           path='/profile'
           element={<Profile />}
         />
-        <Route
-          path='/register'
-          element={<Register />}
-        />
+
       </Routes>
     </BrowserRouter>
 

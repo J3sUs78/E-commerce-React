@@ -17,7 +17,12 @@ import Header from '../components/shared/Header';
 import Card from '../components/shared/Card';
 
 
+//User
+export const Register = () => <h1>Register page(Public)</h1>;
 
+export const Login = () => <h1>Login page(Public)</h1>;
+
+export const Delivery = () => <h1>Delivery page(Public)</h1>;
 
 export const Home = () => {
     const nav = useNavigate();
@@ -115,10 +120,8 @@ export const Profile = () => {
     );
 };
 
+//Admin
 export const Analytics = () => <h1>Analitycs page(Private)</h1>;
 
 export const Dashboard = () => <h1>AddProd page(Private)</h1>;
 
-export const Register = () => <h1>AddProd page(Private)</h1>;
-
-export const Login = () => <h1>AddProd page(Private)</h1>;

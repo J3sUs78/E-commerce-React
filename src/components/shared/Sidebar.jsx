@@ -5,11 +5,15 @@ import { MdOutgoingMail } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 
 
+import { useNavigate } from 'react-router-dom';
+
+
 // Componente Sidebar
 
 const Sidebar = (props) => {
 
     const {showMenu} = props;
+    const nav = useNavigate();
 
 
     return (
@@ -58,7 +62,7 @@ const Sidebar = (props) => {
                     {/* Cuarta opción (profile) */}
                     <li className="hover:bg-[#262837] p-4 rounded-tl-xl rounded-bl-xl group transition-colors">
                         <a // Enlace
-                            href="#"
+                            onClick={() => nav("profile")}
                             className="group-hover:bg-[#ec7c6a] p-4 flex justify-center rounded-xl text-[#ec7c6a] group-hover:text-white transition-colors"
                         >
                             <RiAccountPinCircleFill className="text-2xl" /> {/* Icono de user */}
