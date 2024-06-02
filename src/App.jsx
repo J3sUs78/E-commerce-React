@@ -1,30 +1,32 @@
+import { useState } from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { auth } from "./components/shared/firebase";
+// Import pages
+import { Home, Loginp, Profile, Registerp } from './pages';
 
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-//Import pages
-import { Home, Login, Profile, Register } from './pages';
-
-
-function App() { //componente react
+function App() { // componente react
+  const [user, setUser] = useState();
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+  }, []);
 
   return (
-    //router
+    // router
     <BrowserRouter>
       <Routes>
-        <Route
-          index element={<Home />}
-        />
+        <Route index element={<Home />} />
         <Route
           path='/profile'
-          element={<Profile />}
+          element={user ? <Profile /> : <Navigate to="/login" />}
         />
-
+        <Route path='/login' element={<Loginp />} />
+        <Route path='/register' element={<Registerp />} />
       </Routes>
     </BrowserRouter>
-
-  )
+  );
 }
 
-
-export default App
+export default App;
