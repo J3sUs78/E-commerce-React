@@ -84,7 +84,7 @@ const Sidebar = ({ showMenu, user }) => {
                 <ul>
                     <li className="bg-[#262837] p-4 rounded-tl-xl rounded-bl-xl">
                         <a // Enlace
-                            onClick={() => nav("login")}
+                            onClick={() => nav("/login")}
                             className="bg-[#ec7c6a] p-4 flex justify-center rounded-xl text-white"
                         >
                             {user ? <VscSignIn className="text-2xl" /> : <GrUserExpert className="text-2xl" />} {/* Icono logout */}

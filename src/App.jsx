@@ -19,7 +19,11 @@ function App() { // componente react
     // router
     <BrowserRouter>
       <Routes>
-        <Route path="/home"index element={<Home />} />
+        <Route 
+          
+          index 
+          element={<Home />} 
+        />
         <Route
           path='/profile'
           element={user ? <Profile /> : <Navigate to="/login" />}

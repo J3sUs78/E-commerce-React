@@ -17,7 +17,7 @@ const Login = () => {
             await signInWithEmailAndPassword(auth, email, password);
             console.log("Usuario logeado exitosamente");
             // Redirecciona al usuario al home
-            nav("/home");
+            nav(-1);
             toast.success("Usuario logeado exitosamente", {
                 position: "top-center",
             });
