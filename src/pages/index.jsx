@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import { auth } from "../components/shared/firebase";
 
 import { useNavigate } from 'react-router-dom';
 
@@ -27,18 +28,6 @@ export const Registerp = () => {
 };
 
 export const Loginp = () => {
-    const [user, setUser] = useState(null);
-
-    const loginRequest = () => {
-        //request done
-        setUser({
-            id: 1,
-            name: 'Jhon'
-        })
-    }
-
-    const logout = () => setUser(null)
-
     return (
         <Login />
     );
@@ -48,9 +37,24 @@ export const Delivery = () => <h1>Delivery page(Public)</h1>;
 
 export const Home = () => {
     const [user, setUser] = useState(null);
-    const nav = useNavigate();
     const [showMenu, setShowMenu] = useState(false);
     const [showOrder, setShowOrder] = useState(false);
+    const nav = useNavigate();
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                // Si hay un usuario logueado, establecerlo en el estado
+                setUser(user);
+            } else {
+                // Si no hay usuario logueado, redirigir al usuario a la página de inicio de sesión
+                nav('/login');
+            }
+        });
+
+        // Limpiar el efecto cuando el componente se desmonte
+        return () => unsubscribe();
+    }, [nav]);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -84,7 +88,7 @@ export const Home = () => {
             <main className='lg:pl-32 lg:pr-96 pb-20'>
                 <div className='md:p-8 p-4'>
                     {/* HEADER */}
-                    <Header />
+                    <Header userInfo={user ? { name: user.displayName, date: new Date().toLocaleDateString() } : null} />
                     {/* Title content */}
                     <div className='flex items-center justify-between mb-16'>
                         <h2 className='text-xl text-gray-300'>Exclusivo para ti</h2>
@@ -103,6 +107,7 @@ export const Home = () => {
         </div>
     );
 };
+
 
 export const Profile = () => {
     const nav = useNavigate();

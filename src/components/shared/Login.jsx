@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import { useState } from "react";
 import { auth } from "./firebase";
 import { toast } from "react-toastify";
 import SignInwithGoogle from "../shared/SignInWithGoogle";
@@ -15,9 +15,10 @@ const Login = () => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            console.log("User logged in Successfully");
-            window.location.href = "/profile";
-            toast.success("User logged in Successfully", {
+            console.log("Usuario logeado exitosamente");
+            // Redirecciona al usuario al home
+            nav("/home");
+            toast.success("Usuario logeado exitosamente", {
                 position: "top-center",
             });
         } catch (error) {
