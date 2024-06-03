@@ -1,9 +1,14 @@
 import React from 'react';
+
 import { RiHomeSmileFill, RiAccountPinCircleFill, RiLogoutCircleRFill } from "react-icons/ri";
 import { GiShop } from "react-icons/gi";
 import { MdOutgoingMail } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 import { GrUserExpert } from "react-icons/gr";
+import { VscSignIn } from "react-icons/vsc";
+
+
+
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ showMenu, user }) => {
@@ -82,7 +87,7 @@ const Sidebar = ({ showMenu, user }) => {
                             onClick={() => nav("login")}
                             className="bg-[#ec7c6a] p-4 flex justify-center rounded-xl text-white"
                         >
-                            {user ? <RiLogoutCircleRFill className="text-2xl" /> : <GrUserExpert className="text-2xl" />} {/* Icono logout */}
+                            {user ? <VscSignIn className="text-2xl" /> : <GrUserExpert className="text-2xl" />} {/* Icono logout */}
                         </a>
                     </li>
                 </ul>
